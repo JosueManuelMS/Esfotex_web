@@ -37,11 +37,12 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/especializaciones/fade/03.jpg", alt: "Especialización en lencería" }
     ],
     "especializaciones-gallery": [
-        { src: "img/carouseles/especializaciones/galeria/01.jpg", alt: "Práctica de especialización 1" },
-        { src: "img/carouseles/especializaciones/galeria/02.jpg", alt: "Práctica de especialización 2" },
-        { src: "img/carouseles/especializaciones/galeria/03.jpg", alt: "Práctica de especialización 3" },
-        { src: "img/carouseles/especializaciones/galeria/04.jpg", alt: "Práctica de especialización 4" },
-        { src: "img/carouseles/especializaciones/galeria/05.jpg", alt: "Práctica de especialización 5" }
+        { src: "img/carouseles/especializaciones/galeria/01.jpeg", alt: "Práctica de especialización 1" },
+        { src: "img/carouseles/especializaciones/galeria/02.jpeg", alt: "Práctica de especialización 2" },
+        { src: "img/carouseles/especializaciones/galeria/03.jpeg", alt: "Práctica de especialización 3" },
+        { src: "img/carouseles/especializaciones/galeria/04.jpeg", alt: "Práctica de especialización 4" },
+        { src: "img/carouseles/especializaciones/galeria/05.jpeg", alt: "Práctica de especialización 5" },
+        { src: "img/carouseles/especializaciones/galeria/06.jpeg", alt: "Práctica de especialización 6" }
     ],
     "diseno-fade": [
         { src: "img/carouseles/diseno/fade/01.jpeg", alt: "Proceso creativo en diseño de modas" },
@@ -49,9 +50,9 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/diseno/fade/03.jpeg", alt: "Propuesta final de diseño de prendas" }
     ],
     "diseno-gallery": [
-        { src: "img/carouseles/diseno/galeria/01.jpg", alt: "Práctica de diseño de modas 4" },
-        { src: "img/carouseles/diseno/galeria/02.jpg", alt: "Práctica de diseño de modas 5" },
-        { src: "img/carouseles/diseno/galeria/03.jpg", alt: "Práctica de diseño de modas 6" },
+        { src: "img/carouseles/diseno/galeria/01.jpeg", alt: "Práctica de diseño de modas 4" },
+        { src: "img/carouseles/diseno/galeria/02.jpeg", alt: "Práctica de diseño de modas 5" },
+        { src: "img/carouseles/diseno/galeria/03.jpeg", alt: "Práctica de diseño de modas 6" },
         { src: "img/carouseles/diseno/galeria/04.jpg", alt: "Práctica de diseño de modas 7" },
         { src: "img/carouseles/diseno/galeria/05.jpg", alt: "Práctica de diseño de modas 8" }
     ]
