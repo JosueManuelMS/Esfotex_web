@@ -24,17 +24,35 @@ const container = document.getElementById("coursesContainer");
 
 if(container){
   courses.forEach(course=>{
-    container.innerHTML += `
-    <div class="card">
+    const cardHTML = `
+    <div class="card" role="button" tabindex="0" style="cursor: pointer;">
     <img src="${course.img}">
     <h3>${course.title}</h3>
     <p>${course.desc}</p>
     </div>
     `;
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = cardHTML;
+    const card = tempDiv.firstElementChild;
+    
+    const handleCardClick = () => {
+      const phoneNumber = "51939122803";
+      const message = `Hola ESFOTEX, quería información sobre ${course.title}. ¿Pueden ayudarme?`;
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, "_blank");
+    };
+    
+    card.addEventListener("click", handleCardClick);
+    card.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") handleCardClick();
+    });
+    
+    container.appendChild(card);
   });
 }
 
 let index = 0;
+let mainSliderTimer = null;
 
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
@@ -66,11 +84,36 @@ function goToSlide(i){
     showSlide(i);
 }
 
-/* automático */
-if(slides.length && dots.length && document.querySelector(".slides")){
-    setInterval(()=>{
+function restartMainSliderAutoplay(){
+    if(!slides.length || !dots.length || !document.querySelector(".slides")) return;
+    if(mainSliderTimer) clearInterval(mainSliderTimer);
+    mainSliderTimer = setInterval(()=>{
         nextSlide();
     },4000);
+}
+
+/* automático */
+if(slides.length && dots.length && document.querySelector(".slides")){
+    restartMainSliderAutoplay();
+
+    const originalPrevSlide = prevSlide;
+    const originalNextSlide = nextSlide;
+    const originalGoToSlide = goToSlide;
+
+    prevSlide = function(){
+        originalPrevSlide();
+        restartMainSliderAutoplay();
+    };
+
+    nextSlide = function(){
+        originalNextSlide();
+        restartMainSliderAutoplay();
+    };
+
+    goToSlide = function(i){
+        originalGoToSlide(i);
+        restartMainSliderAutoplay();
+    };
 }
 
 /* HERO BACKGROUND CHANGER */
@@ -217,6 +260,81 @@ if (benefitCards.length) {
     });
 }
 
+function normalizeCarouselItems(items){
+    if(!Array.isArray(items)) return [];
+
+    return items
+        .map((item)=>{
+            if(typeof item === 'string') {
+                return { src: item, alt: '' };
+            }
+
+            if(!item || typeof item.src !== 'string') {
+                return null;
+            }
+
+            return {
+                src: item.src,
+                alt: typeof item.alt === 'string' ? item.alt : ''
+            };
+        })
+        .filter(Boolean);
+}
+
+function populateCarouselsFromConfig(){
+    const config = window.CAROUSEL_IMAGE_CONFIG || {};
+
+    document.querySelectorAll('.fade-carousel[data-carousel-key]').forEach((carousel) => {
+        const key = carousel.dataset.carouselKey;
+        const items = normalizeCarouselItems(config[key]);
+        if(!items.length) return;
+
+        carousel.innerHTML = '';
+
+        items.forEach((item, idx) => {
+            const img = document.createElement('img');
+            img.className = idx === 0 ? 'fade-slide is-active' : 'fade-slide';
+            img.src = item.src;
+            img.alt = item.alt || `Imagen ${idx + 1}`;
+            img.loading = 'lazy';
+            carousel.appendChild(img);
+        });
+    });
+
+    document.querySelectorAll('.machine-carousel[data-carousel-key]').forEach((carousel) => {
+        const key = carousel.dataset.carouselKey;
+        const items = normalizeCarouselItems(config[key]);
+        if(!items.length) return;
+
+        const prevBtn = carousel.querySelector('.machine-carousel-prev');
+        const nextBtn = carousel.querySelector('.machine-carousel-next');
+
+        carousel.querySelectorAll('.machine-slide').forEach((slide) => slide.remove());
+
+        items.forEach((item, idx) => {
+            const img = document.createElement('img');
+            img.className = idx === 0 ? 'machine-slide is-active' : 'machine-slide';
+            img.src = item.src;
+            img.alt = item.alt || `Imagen ${idx + 1}`;
+            img.loading = 'lazy';
+
+            if(prevBtn){
+                carousel.insertBefore(img, prevBtn);
+                return;
+            }
+
+            if(nextBtn){
+                carousel.insertBefore(img, nextBtn);
+                return;
+            }
+
+            carousel.appendChild(img);
+        });
+    });
+}
+
+populateCarouselsFromConfig();
+
 const fadeCarousels = document.querySelectorAll('.fade-carousel');
 
 fadeCarousels.forEach((carousel) => {
@@ -242,6 +360,8 @@ machineCarousels.forEach((carousel) => {
     if (slides.length < 2) return;
 
     let activeIndex = 0;
+    let machineCarouselTimer = null;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const showSlide = (newIndex) => {
         slides[activeIndex].classList.remove('is-active');
@@ -249,21 +369,48 @@ machineCarousels.forEach((carousel) => {
         slides[activeIndex].classList.add('is-active');
     };
 
+    const restartMachineAutoplay = () => {
+        if (reducedMotion) return;
+        if (machineCarouselTimer) clearInterval(machineCarouselTimer);
+        machineCarouselTimer = setInterval(() => {
+            showSlide(activeIndex + 1);
+        }, 6000);
+    };
+
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             showSlide(activeIndex - 1);
+            restartMachineAutoplay();
         });
     }
 
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             showSlide(activeIndex + 1);
+            restartMachineAutoplay();
         });
     }
 
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        setInterval(() => {
-            showSlide(activeIndex + 1);
-        }, 6000);
-    }
+    restartMachineAutoplay();
+});
+
+// Manejar clicks en los cards de especializaciones
+const specializationCards = document.querySelectorAll('.specialization-card');
+
+specializationCards.forEach((card) => {
+    card.style.cursor = 'pointer';
+    
+    const handleClick = () => {
+        const titleElement = card.querySelector('.course-title');
+        const specialization = titleElement ? titleElement.textContent.trim() : 'una especialización';
+        const phoneNumber = "51939122803";
+        const message = `Hola ESFOTEX, quería información sobre ${specialization}. ¿Pueden ayudarme?`;
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+    };
+    
+    card.addEventListener('click', handleClick);
+    card.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') handleClick();
+    });
 });
