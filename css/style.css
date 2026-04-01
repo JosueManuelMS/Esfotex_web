@@ -583,13 +583,23 @@ position:absolute;
 inset:0;
 width:100%;
 height:100%;
+display:block;
 object-fit:contain;
 opacity:0;
 transition:opacity .9s ease;
+z-index:0;
+pointer-events:none;
+}
+
+.machine-slide[type="video"],
+video.machine-slide{
+background:#000;
 }
 
 .machine-slide.is-active{
 opacity:1;
+z-index:1;
+pointer-events:auto;
 }
 
 .machine-carousel-btn{

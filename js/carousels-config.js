@@ -37,6 +37,7 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/especializaciones/fade/03.jpg", alt: "Especialización en lencería" }
     ],
     "especializaciones-gallery": [
+        { type: "video", src: "img/carouseles/especializaciones/galeria/video_especializacion.webm", poster: "img/carouseles/especializaciones/galeria/01.jpeg", alt: "Video de prácticas de especializaciones" },
         { src: "img/carouseles/especializaciones/galeria/01.jpeg", alt: "Práctica de especialización 1" },
         { src: "img/carouseles/especializaciones/galeria/02.jpeg", alt: "Práctica de especialización 2" },
         { src: "img/carouseles/especializaciones/galeria/03.jpeg", alt: "Práctica de especialización 3" },
@@ -50,6 +51,7 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/diseno/fade/03.jpeg", alt: "Propuesta final de diseño de prendas" }
     ],
     "diseno-gallery": [
+        { type: "video", src: "img/carouseles/diseno/galeria/video_diseno.webm", poster: "img/carouseles/diseno/galeria/01.jpeg", alt: "Video del proceso de diseño de modas" },
         { src: "img/carouseles/diseno/galeria/01.jpeg", alt: "Práctica de diseño de modas 4" },
         { src: "img/carouseles/diseno/galeria/02.jpeg", alt: "Práctica de diseño de modas 5" },
         { src: "img/carouseles/diseno/galeria/03.jpeg", alt: "Práctica de diseño de modas 6" },

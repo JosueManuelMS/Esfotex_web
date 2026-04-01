@@ -2,9 +2,9 @@
 
 Este sitio ya esta preparado para que no tengas que tocar el codigo principal.
 
-## 1) Donde estan las imagenes
+## 1) Donde estan las imagenes y videos
 
-Las imagenes de carruseles estan en:
+Los archivos de carruseles estan en:
 
 - `img/carouseles/maquina/`
 - `img/carouseles/patronaje/`
@@ -21,15 +21,18 @@ En Patronaje tambien hay:
 - `punto`
 - `plana`
 
-## 2) Como agregar una imagen nueva
+## 2) Como agregar una imagen o video nuevo
 
 1. En Hostinger > Administrador de archivos, entra a la carpeta del carrusel.
-2. Sube la imagen con nombre ordenado (ejemplo: `06.jpg`, `07.jpg`).
+2. Sube el archivo con nombre ordenado (ejemplo: `06.jpg`, `07.jpg`, `video_diseno.webm`).
 3. Edita `js/carousels-config.js`.
 4. Busca la clave del carrusel (por ejemplo `"diseno-gallery"`).
 5. Agrega una linea igual a las otras:
 
 ```js
+{ type: "video", src: "img/carouseles/diseno/galeria/video_diseno.webm", poster: "img/carouseles/diseno/galeria/01.jpeg", alt: "Video del proceso de diseño de modas" }
+
+// o una imagen normal
 { src: "img/carouseles/diseno/galeria/06.jpg", alt: "Texto corto de la imagen" }
 ```
 
@@ -39,6 +42,7 @@ En Patronaje tambien hay:
 
 1. Sube la imagen nueva con el mismo nombre (ejemplo: `03.jpg`) para reemplazo directo.
 2. Si cambiaste nombre o extension, actualiza ese `src` en `js/carousels-config.js`.
+3. Si reemplazas un video, conserva el formato y actualiza `poster` si cambia la portada.
 
 ## 4) Claves de cada carrusel
 
