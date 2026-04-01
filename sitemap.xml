@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://esfotex.edu.pe/index.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://esfotex.edu.pe/</loc>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
     <loc>https://esfotex.edu.pe/ManejoDeMaquina.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
     <loc>https://esfotex.edu.pe/Patronaje.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
     <loc>https://esfotex.edu.pe/Especializaciones.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
     <loc>https://esfotex.edu.pe/DiseñoDeModas.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-01</lastmod>
   </url>
 </urlset>
