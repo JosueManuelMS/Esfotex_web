@@ -8,7 +8,8 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/maquina/galeria/01.jpg", alt: "Práctica de confección en máquina industrial" },
         { src: "img/carouseles/maquina/galeria/02.jpg", alt: "Sesión de manejo de máquina en taller" },
         { src: "img/carouseles/maquina/galeria/03.jpg", alt: "Práctica guiada con máquinas de confección" },
-        { src: "img/carouseles/maquina/galeria/04.jpg", alt: "Alumno realizando acabados en máquina industrial" }
+        { src: "img/carouseles/maquina/galeria/04.jpg", alt: "Alumno realizando acabados en máquina industrial" },
+        { src: "img/carouseles/maquina/galeria/05.jpeg", alt: "Práctica de manejo de máquina con guía docente" },
     ],
     "patronaje-fade": [
         { src: "img/carouseles/patronaje/fade/01.jpg", alt: "Patronaje tizado" },
@@ -29,7 +30,8 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/patronaje/galeria/01.jpg", alt: "Práctica de patronaje en taller" },
         { src: "img/carouseles/patronaje/galeria/02.jpg", alt: "Desarrollo de moldes de patronaje" },
         { src: "img/carouseles/patronaje/galeria/03.jpg", alt: "Sesión de patronaje con guía docente" },
-        { src: "img/carouseles/patronaje/galeria/04.jpg", alt: "Práctica de trazado y escalado de prendas" }
+        { src: "img/carouseles/patronaje/galeria/04.jpg", alt: "Práctica de trazado y escalado de prendas" },
+        { src: "img/carouseles/patronaje/galeria/05.jpeg", alt: "Flyer de patronaje" }
     ],
     "especializaciones-fade": [
         { src: "img/carouseles/especializaciones/fade/01.jpg", alt: "Especialización en prendas deportivas" },
@@ -37,13 +39,23 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/especializaciones/fade/03.jpg", alt: "Especialización en lencería" }
     ],
     "especializaciones-gallery": [
-        { type: "video", src: "img/carouseles/especializaciones/galeria/video_especializacion.webm", poster: "img/carouseles/especializaciones/galeria/01.jpeg", alt: "Video de prácticas de especializaciones" },
         { src: "img/carouseles/especializaciones/galeria/01.jpeg", alt: "Práctica de especialización 1" },
         { src: "img/carouseles/especializaciones/galeria/02.jpeg", alt: "Práctica de especialización 2" },
         { src: "img/carouseles/especializaciones/galeria/03.jpeg", alt: "Práctica de especialización 3" },
         { src: "img/carouseles/especializaciones/galeria/04.jpeg", alt: "Práctica de especialización 4" },
         { src: "img/carouseles/especializaciones/galeria/05.jpeg", alt: "Práctica de especialización 5" },
-        { src: "img/carouseles/especializaciones/galeria/06.jpeg", alt: "Práctica de especialización 6" }
+        { src: "img/carouseles/especializaciones/galeria/06.jpeg", alt: "Práctica de especialización 6" },
+        { src: "img/carouseles/especializaciones/galeria/07.jpeg", alt: "Flyer de especialización 1" },
+        { src: "img/carouseles/especializaciones/galeria/08.jpeg", alt: "Flyer de especialización 2" },
+        { src: "img/carouseles/especializaciones/galeria/09.jpeg", alt: "Flyer de especialización 3" },
+        { src: "img/carouseles/especializaciones/galeria/10.jpeg", alt: "Flyer de especialización 4" },
+        { src: "img/carouseles/especializaciones/galeria/11.jpeg", alt: "Flyer de especialización 5" },
+        { src: "img/carouseles/especializaciones/galeria/12.jpeg", alt: "Flyer de especialización 6" },
+        { src: "img/carouseles/especializaciones/galeria/13.jpeg", alt: "Flyer de especialización 7" },
+        { src: "img/carouseles/especializaciones/galeria/14.jpeg", alt: "Flyer de especialización 8" },
+        { src: "img/carouseles/especializaciones/galeria/15.jpeg", alt: "Práctica de especialización 7" },
+        { src: "img/carouseles/especializaciones/galeria/16.jpeg", alt: "Práctica de especialización 8" },
+        { src: "img/carouseles/especializaciones/galeria/17.jpeg", alt: "Práctica de especialización 9" }
     ],
     "diseno-fade": [
         { src: "img/carouseles/diseno/fade/01.jpeg", alt: "Proceso creativo en diseño de modas" },

@@ -106,7 +106,7 @@ nav a:hover{color:var(--rojo);}
 .hero-large{
 height:90vh;
 margin-top:47px;
-background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3)),url("../img/hero.png");
+background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3)),url("../img/hero.jpeg");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -230,6 +230,152 @@ transition:.4s;
 .btn-primary:hover{
 background:var(--rojo-hover);
 transform:translateY(-3px);
+}
+
+/* REGISTRO */
+.registro-section{
+padding-top:70px;
+padding-bottom:70px;
+background:linear-gradient(135deg,#f8fbff 0%,#f0f6ff 45%,#fff5f2 100%);
+}
+
+.registro-wrap{
+max-width:1120px;
+margin:0 auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:28px;
+align-items:stretch;
+}
+
+.registro-copy{
+text-align:left;
+padding:28px;
+border-radius:14px;
+background:var(--azul);
+color:var(--blanco);
+box-shadow:0 14px 32px rgba(29,53,87,0.26);
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.registro-kicker{
+font-size:13px;
+font-weight:700;
+letter-spacing:1.4px;
+margin-bottom:12px;
+color:#ffd166;
+}
+
+.registro-copy h2{
+color:var(--blanco);
+font-size:38px;
+line-height:1.15;
+margin-bottom:14px;
+}
+
+.registro-copy p{
+font-size:17px;
+line-height:1.7;
+}
+
+.registro-form{
+text-align:left;
+background:var(--blanco);
+border-radius:14px;
+padding:24px;
+box-shadow:0 10px 28px rgba(0,0,0,0.12);
+display:grid;
+gap:10px;
+}
+
+.registro-form label{
+font-weight:600;
+color:var(--azul);
+font-size:14px;
+}
+
+.registro-form input,
+.registro-form select,
+.registro-form textarea{
+width:100%;
+padding:12px 14px;
+border:1px solid #d6deec;
+border-radius:10px;
+font:inherit;
+color:var(--azul);
+background:#fbfdff;
+}
+
+.registro-form input:focus,
+.registro-form select:focus,
+.registro-form textarea:focus{
+outline:none;
+border-color:var(--azul-claro);
+box-shadow:0 0 0 3px rgba(69,123,157,0.18);
+}
+
+.registro-form textarea{
+resize:vertical;
+min-height:96px;
+}
+
+.registro-bot-field{
+position:absolute;
+left:-9999px;
+opacity:0;
+height:0;
+width:0;
+pointer-events:none;
+}
+
+.registro-check{
+display:flex;
+align-items:flex-start;
+gap:10px;
+font-weight:400;
+margin-top:2px;
+}
+
+.registro-check input{
+width:18px;
+height:18px;
+margin-top:2px;
+accent-color:var(--rojo);
+}
+
+.registro-submit{
+border:none;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+}
+
+.registro-submit[disabled]{
+opacity:0.75;
+cursor:wait;
+transform:none;
+}
+
+.registro-status{
+min-height:22px;
+font-weight:600;
+font-size:14px;
+}
+
+.registro-status[data-state="ok"]{
+color:#0c8b44;
+}
+
+.registro-status[data-state="error"]{
+color:#b42318;
+}
+
+.registro-help{
+font-size:13px;
+line-height:1.5;
+color:#5f6f8f;
 }
 
 /* SECTIONS */
@@ -735,7 +881,7 @@ line-height:1.65;
 /* GALERÍA */
 .gallery-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(2,1fr);
 gap:15px;
 }
 
@@ -755,7 +901,7 @@ box-shadow:0 14px 28px rgba(0,0,0,0.2);
 
 .gallery-grid img{
 width:100%;
-height:180px;
+height:250px;
 object-fit:cover;
 border-radius:8px;
 }
@@ -1101,6 +1247,22 @@ nav.active{display:flex;}
 .hero-large h1{font-size:36px;}
 .hero-large p{font-size:18px;}
 
+.registro-wrap{
+grid-template-columns:1fr;
+}
+
+.registro-copy{
+padding:22px;
+}
+
+.registro-copy h2{
+font-size:30px;
+}
+
+.registro-form{
+padding:18px;
+}
+
 .section{
 padding:70px 24px;
 }
@@ -1147,6 +1309,10 @@ font-size:21px;
 .course-learn-layout{
 grid-template-columns:1fr;
 gap:22px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
 }
 
 .specializations-grid{

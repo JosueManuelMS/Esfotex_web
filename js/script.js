@@ -117,7 +117,7 @@ if(slides.length && dots.length && document.querySelector(".slides")){
 }
 
 /* HERO BACKGROUND CHANGER */
-const heroImages = ['img/hero.png', 'img/hero2.jpg','img/hero3.png','img/hero4.jpg', 'img/hero5.png'];
+const heroImages = ['img/hero.jpeg', 'img/hero2.jpeg','img/hero3.jpeg'];
 let heroIndex = 0;
 const heroSection = document.querySelector('.hero-large');
 const path = window.location.pathname.toLowerCase();
@@ -473,3 +473,74 @@ specializationCards.forEach((card) => {
         if (e.key === 'Enter' || e.key === ' ') handleClick();
     });
 });
+
+const registroWrap = document.querySelector('.registro-wrap');
+const registroForm = document.getElementById('registroForm');
+const registroStatus = document.getElementById('registroStatus');
+
+function setRegistroStatus(message, state){
+    if(!registroStatus) return;
+    registroStatus.textContent = message;
+    if(!state){
+        registroStatus.removeAttribute('data-state');
+        return;
+    }
+    registroStatus.setAttribute('data-state', state);
+}
+
+if(registroForm && registroWrap){
+    registroForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const endpoint = (registroWrap.dataset.sheetEndpoint || '').trim();
+        const submitButton = registroForm.querySelector('button[type="submit"]');
+
+        if(!endpoint){
+            setRegistroStatus('Configura primero la URL de Google Apps Script en data-sheet-endpoint para activar el guardado.', 'error');
+            return;
+        }
+
+        const formData = new FormData(registroForm);
+        if(formData.get('empresa')){
+            setRegistroStatus('Solicitud detectada como no válida.', 'error');
+            return;
+        }
+
+        if(!registroForm.checkValidity()){
+            registroForm.reportValidity();
+            setRegistroStatus('Completa los campos obligatorios antes de enviar.', 'error');
+            return;
+        }
+
+        const payload = {
+            nombre: String(formData.get('nombre') || '').trim(),
+            telefono: String(formData.get('telefono') || '').trim(),
+            correo: String(formData.get('correo') || '').trim(),
+            curso: String(formData.get('curso') || '').trim(),
+            mensaje: String(formData.get('mensaje') || '').trim(),
+            pagina: window.location.href,
+            creadoEn: new Date().toISOString()
+        };
+
+        try{
+            if(submitButton) submitButton.disabled = true;
+            setRegistroStatus('Enviando registro...', '');
+
+            await fetch(endpoint, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            registroForm.reset();
+            setRegistroStatus('Registro enviado correctamente. Te contactaremos pronto.', 'ok');
+        }catch(error){
+            setRegistroStatus('No se pudo enviar el registro. Intenta nuevamente en unos minutos.', 'error');
+        }finally{
+            if(submitButton) submitButton.disabled = false;
+        }
+    });
+}

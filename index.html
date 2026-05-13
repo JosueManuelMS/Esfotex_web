@@ -25,11 +25,9 @@
 <link rel="icon" type="image/png" href="img/logo.png">
 
 <!-- Precargar imágenes del hero -->
-<link rel="preload" as="image" href="img/hero.png">
-<link rel="preload" as="image" href="img/hero2.jpg">
-<link rel="preload" as="image" href="img/hero3.png">
-<link rel="preload" as="image" href="img/hero4.jpg">
-<link rel="preload" as="image" href="img/hero5.png">
+<link rel="preload" as="image" href="img/hero.jpeg">
+<link rel="preload" as="image" href="img/hero2.jpeg">
+<link rel="preload" as="image" href="img/hero3.jpeg">
 
 <script type="application/ld+json">
 {
@@ -125,7 +123,7 @@
 
 <!-- HEADER -->
 <header>
-    <div class="logo"><img src="img/logo.png" alt="ESFOTEX Logo" class="logo-img"> ESFOTEX</div>
+    <a href="index.html" class="logo" aria-label="ESFOTEX - Ir a inicio"><img src="img/logo.png" alt="" class="logo-img"> ESFOTEX</a>
     <nav id="nav">
         <a href="#hero">Inicio</a>
         <a href="#cursos">Cursos</a>
@@ -145,6 +143,50 @@
         <h1>Tu Futuro en la Costura Comienza Aquí</h1>
         <p>Estudia confección, diseño y patronaje profesional en ESFOTEX.</p>
         <a href="https://wa.me/51939122803?text=Hola%20ESFOTEX%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20cursos.%20%C2%BFMe%20pueden%20ayudar%3F" class="btn-primary">¡Inscribete!</a>
+    </div>
+</section>
+
+<!-- REGISTRO -->
+<section id="registro" class="section registro-section">
+    <div class="registro-wrap" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbw03AzRKAdA9UodtEct8heG7yXnhF6uUOAJmf4nPDxc4naoZzG2vmYP3zc6WXpOnMXQ/exec">
+        <div class="registro-copy">
+            <p class="registro-kicker">INSCRIPCIONES ABIERTAS</p>
+            <h2>Registra tu interés y te contactamos</h2>
+            <p>Déjanos tus datos y te ayudamos a elegir el curso ideal según tu nivel, horarios y objetivo profesional.</p>
+        </div>
+
+        <form id="registroForm" class="registro-form" novalidate>
+            <label for="registroNombre">Nombre completo</label>
+            <input id="registroNombre" name="nombre" type="text" autocomplete="name" required>
+
+            <label for="registroTelefono">WhatsApp</label>
+            <input id="registroTelefono" name="telefono" type="tel" autocomplete="tel" required pattern="[0-9+\s()-]{7,20}">
+
+            <label for="registroCorreo">Correo electrónico</label>
+            <input id="registroCorreo" name="correo" type="email" autocomplete="email" required>
+
+            <label for="registroCurso">Curso de interés</label>
+            <select id="registroCurso" name="curso" required>
+                <option value="" selected disabled>Selecciona un curso</option>
+                <option value="Manejo de Máquina">Manejo de Máquina</option>
+                <option value="Patronaje de Prendas">Patronaje de Prendas</option>
+                <option value="Especializaciones">Especializaciones</option>
+                <option value="Diseño de Modas">Diseño de Modas</option>
+            </select>
+
+            <label for="registroMensaje">Mensaje (opcional)</label>
+            <textarea id="registroMensaje" name="mensaje" rows="3" placeholder="Cuéntanos qué deseas aprender"></textarea>
+
+            <input type="text" name="empresa" class="registro-bot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <label class="registro-check" for="registroTerminos">
+                <input id="registroTerminos" name="terminos" type="checkbox" required>
+                <span>Acepto que ESFOTEX me contacte por WhatsApp o correo.</span>
+            </label>
+
+            <button type="submit" class="btn-primary registro-submit">Reservar mi vacante</button>
+            <p id="registroStatus" class="registro-status" aria-live="polite"></p>
+        </form>
     </div>
 </section>
 
@@ -223,7 +265,7 @@
 
             <div class="card">
                 <div class="numero">04</div>
-                <p>Ventas por <strong>Redes Sociales</strong></p>
+                <p>Diseño y gestión de <strong>Modas</strong></p>
             </div>
 
             <div class="card">
@@ -254,7 +296,7 @@
         <div class="horario-card">
             <h3>Turno Tarde</h3>
             <p><strong>Horario:</strong> 2:00 p.m. a 6:00 p.m.</p>
-            <p><strong>Días:</strong> Martes y Jueves / Lunes y Miércoles</p>
+            <p><strong>Días:</strong> Martes y Jueves</p>
             <p class="horario-cursos">Manejo de Máquina · Patronaje</p>
         </div>
 
@@ -275,7 +317,7 @@
         <div class="horario-card">
             <h3>Diseño de Modas (Promocional)</h3>
             <p><strong>Lunes:</strong> 9:00 a.m. a 12:00 p.m.</p>
-            <p><strong>Jueves:</strong> 2:00 p.m. a 5:00 p.m.</p>
+            <p><strong>Sábado:</strong> 10:00 a.m. a 1:00 p.m.</p>
         </div>
 
         <div class="horario-card">
