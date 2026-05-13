@@ -268,16 +268,21 @@ margin-bottom:12px;
 color:#ffd166;
 }
 
-.registro-copy h2{
+.registro-section .registro-copy h2{
 color:var(--blanco);
 font-size:38px;
 line-height:1.15;
 margin-bottom:14px;
 }
 
-.registro-copy p{
+.registro-section .registro-copy p{
+color:var(--blanco);
 font-size:17px;
 line-height:1.7;
+}
+
+.registro-section .registro-copy .registro-kicker{
+color:#ffd166;
 }
 
 .registro-form{
