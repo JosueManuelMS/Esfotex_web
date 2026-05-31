@@ -10,6 +10,7 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/maquina/galeria/03.jpg", alt: "Práctica guiada con máquinas de confección" },
         { src: "img/carouseles/maquina/galeria/04.jpg", alt: "Alumno realizando acabados en máquina industrial" },
         { src: "img/carouseles/maquina/galeria/05.jpeg", alt: "Práctica de manejo de máquina con guía docente" },
+        { src: "img/carouseles/maquina/galeria/06.jpeg", alt: "Práctica de manejo de máquina con la profesora" }
     ],
     "patronaje-fade": [
         { src: "img/carouseles/patronaje/fade/01.jpg", alt: "Patronaje tizado" },
@@ -31,7 +32,7 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/patronaje/galeria/02.jpg", alt: "Desarrollo de moldes de patronaje" },
         { src: "img/carouseles/patronaje/galeria/03.jpg", alt: "Sesión de patronaje con guía docente" },
         { src: "img/carouseles/patronaje/galeria/04.jpg", alt: "Práctica de trazado y escalado de prendas" },
-        { src: "img/carouseles/patronaje/galeria/05.jpeg", alt: "Flyer de patronaje" }
+        { src: "img/carouseles/patronaje/galeria/05.jpeg", alt: "Practica conjunta" }
     ],
     "especializaciones-fade": [
         { src: "img/carouseles/especializaciones/fade/01.jpg", alt: "Especialización en prendas deportivas" },
@@ -63,11 +64,16 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/diseno/fade/03.jpeg", alt: "Propuesta final de diseño de prendas" }
     ],
     "diseno-gallery": [
-        { type: "video", src: "img/carouseles/diseno/galeria/video_diseno.webm", poster: "img/carouseles/diseno/galeria/01.jpeg", alt: "Video del proceso de diseño de modas" },
-        { src: "img/carouseles/diseno/galeria/01.jpeg", alt: "Práctica de diseño de modas 4" },
-        { src: "img/carouseles/diseno/galeria/02.jpeg", alt: "Práctica de diseño de modas 5" },
-        { src: "img/carouseles/diseno/galeria/03.jpeg", alt: "Práctica de diseño de modas 6" },
-        { src: "img/carouseles/diseno/galeria/04.jpg", alt: "Práctica de diseño de modas 7" },
-        { src: "img/carouseles/diseno/galeria/05.jpg", alt: "Práctica de diseño de modas 8" }
+        { type: "video", src: "img/carouseles/diseno/galeria/video_diseno.mp4", poster: "img/carouseles/diseno/galeria/02.jpeg", alt: "Video del proceso de diseño de modas" },
+        { src: "img/carouseles/diseno/galeria/01.jpeg", alt: "Práctica de diseño de modas 1" },
+        { src: "img/carouseles/diseno/galeria/02.jpeg", alt: "Práctica de diseño de modas 2" },
+        { src: "img/carouseles/diseno/galeria/03.jpeg", alt: "Práctica de diseño de modas 3" },
+        { src: "img/carouseles/diseno/galeria/04.jpg", alt: "Práctica de diseño de modas 4" },
+        { type: "video", src: "img/carouseles/diseno/galeria/video_diseno2.webm", poster: "img/carouseles/diseno/galeria/05.jpeg", alt: "Video del proceso de diseño de modas" },
+        { src: "img/carouseles/diseno/galeria/05.jpg", alt: "Práctica de diseño de modas 5" },
+        { src: "img/carouseles/diseno/galeria/06.jpeg", alt: "Práctica de diseño de modas 6" },
+        { src: "img/carouseles/diseno/galeria/07.jpeg", alt: "Práctica de diseño de modas 7" },
+        { src: "img/carouseles/diseno/galeria/08.jpeg", alt: "Práctica de diseño de modas 8" },
+        { src: "img/carouseles/diseno/galeria/09.jpeg", alt: "Práctica de diseño de modas 9" }
     ]
 };

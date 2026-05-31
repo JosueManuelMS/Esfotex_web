@@ -123,6 +123,8 @@ const heroSection = document.querySelector('.hero-large');
 const path = window.location.pathname.toLowerCase();
 const isHomePage = path.endsWith('/index.html') || path === '/' || path.endsWith('/esfotex');
 const heroOverlay = "linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3))";
+// Cambia este valor a true para reactivar el carrusel del hero.
+const enableHeroCarousel = false;
 
 // Precargar todas las imágenes
 heroImages.forEach(src => {
@@ -138,7 +140,7 @@ function changeHeroBackground() {
 }
 
 // Cambiar fondo cada 5 segundos
-if(isHomePage && heroSection){
+if(isHomePage && heroSection && enableHeroCarousel){
     const heroBgCurrent = document.createElement('div');
     heroBgCurrent.className = 'hero-bg-layer hero-bg-current';
 

@@ -1,6 +1,7 @@
 :root{
 --rojo:#e63946;
 --rojo-hover:#d62839;
+--rojo-claro:#ff6b6b;
 --azul:#1d3557;
 --azul-claro:#457b9d;
 --gris:#f8f9fa;
@@ -69,9 +70,9 @@ justify-content:space-between;
 align-items:center;
 padding:20px 50px;
 position:fixed;
-top:47px;
-width:100%;
-background:rgba(255,255,255,0.95);
+  top:0;
+  width:100%;
+  background:var(--rojo);
 backdrop-filter:blur(8px);
 z-index:1000;
 }
@@ -79,7 +80,7 @@ z-index:1000;
 .logo{
 font-size:26px;
 font-weight:700;
-color:var(--azul);
+color:var(--blanco);
 display:flex;
 align-items:center;
 gap:10px;
@@ -93,19 +94,22 @@ width:auto;
 nav a{
 margin-left:25px;
 text-decoration:none;
-color:var(--azul);
+color:var(--blanco);
 font-weight:500;
 transition:.3s;
 }
 
-nav a:hover{color:var(--rojo);}
+nav a:hover{
+color:#000;
+opacity:1;
+}
 
 .menu-toggle{display:none; font-size:24px;cursor:pointer;}
 
 /* HERO LARGE */
 .hero-large{
 height:90vh;
-margin-top:47px;
+margin-top:80px;
 background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3)),url("../img/hero.jpeg");
 background-size:cover;
 background-position:center;
@@ -1130,9 +1134,9 @@ color:var(--azul);
 
 /* FOOTER */
 footer{
-background:var(--azul-claro);
+background:	#1D3557;
 color:white;
-padding:40px;
+padding:30px;
 text-align:center;
 }
 
@@ -1147,7 +1151,6 @@ align-items:start;
 
 .footer-title{
 font-size:34px;
-margin-bottom:20px;
 color:var(--blanco);
 }
 
@@ -1188,7 +1191,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 gap:14px;
-margin-top:18px;
 }
 
 .social-link{
