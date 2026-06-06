@@ -921,6 +921,30 @@ font-weight:600;
 color:var(--azul);
 }
 
+.course-card h6{
+display:inline-flex;
+align-items:center;
+margin:12px 0 14px;
+padding:8px 14px;
+border-radius:999px;
+background:var(--rojo);
+color:var(--blanco);
+font-size:12px;
+font-weight:700;
+letter-spacing:.4px;
+text-transform:uppercase;
+line-height:1;
+box-shadow:0 6px 14px rgba(230,57,70,0.28);
+transition:background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.course-card:hover h6,
+.course-card:focus-visible h6{
+background:var(--rojo-hover);
+transform:translateX(3px);
+box-shadow:0 10px 18px rgba(214,40,57,0.32);
+}
+
 .specializations-showcase{
 background:linear-gradient(180deg,#ffffff 0%, #f3f7ff 100%);
 }

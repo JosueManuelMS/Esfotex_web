@@ -4,6 +4,7 @@ import os
 PAIRS = [
     ("img/patronaje-portada.jpg", "img/patronaje-portada-card.jpg"),
     ("img/diseño-portada.jpg", "img/diseño-portada-card.jpg"),
+    ("img/especializacion-portada.jpg", "img/especializacion-portada-card.jpg"),
 ]
 
 TARGET_W = 900
