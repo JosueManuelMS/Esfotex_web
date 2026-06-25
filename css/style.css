@@ -1210,6 +1210,24 @@ font-size:14px;
 opacity:.95;
 }
 
+.footer-claims{
+margin-top:18px;
+}
+
+.footer-claims a,
+.footer-claims a:visited{
+color:var(--blanco);
+text-decoration:underline;
+font-weight:600;
+display:inline-block;
+transition:transform .2s ease, opacity .2s ease;
+}
+
+.footer-claims a:hover{
+transform:scale(1.05);
+opacity:.8;
+}
+
 .social-links{
 display:flex;
 justify-content:center;
@@ -1502,6 +1520,10 @@ font-size:14px;
 
 .footer-copy{
 margin-top:16px;
+}
+
+.footer-claims{
+margin-top:14px;
 }
 
 .social-links{
