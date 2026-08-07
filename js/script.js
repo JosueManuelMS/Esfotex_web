@@ -117,7 +117,7 @@ if(slides.length && dots.length && document.querySelector(".slides")){
 }
 
 /* HERO BACKGROUND CHANGER */
-const heroImages = ['img/hero.jpeg', 'img/hero2.jpeg','img/hero3.jpeg'];
+const heroImages = ['img/hero.jpeg'];
 let heroIndex = 0;
 const heroSection = document.querySelector('.hero-large');
 const path = window.location.pathname.toLowerCase();

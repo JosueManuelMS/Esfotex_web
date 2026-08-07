@@ -69,7 +69,7 @@ window.CAROUSEL_IMAGE_CONFIG = {
         { src: "img/carouseles/diseno/galeria/02.jpeg", alt: "Práctica de diseño de modas 2" },
         { src: "img/carouseles/diseno/galeria/03.jpeg", alt: "Práctica de diseño de modas 3" },
         { src: "img/carouseles/diseno/galeria/04.jpg", alt: "Práctica de diseño de modas 4" },
-        { type: "video", src: "img/carouseles/diseno/galeria/video_diseno2.webm", poster: "img/carouseles/diseno/galeria/05.jpeg", alt: "Video del proceso de diseño de modas" },
+        { type: "video", src: "img/carouseles/diseno/galeria/video_diseno2.webm", poster: "img/carouseles/diseno/galeria/05.jpg", alt: "Video del proceso de diseño de modas" },
         { src: "img/carouseles/diseno/galeria/05.jpg", alt: "Práctica de diseño de modas 5" },
         { src: "img/carouseles/diseno/galeria/06.jpeg", alt: "Práctica de diseño de modas 6" },
         { src: "img/carouseles/diseno/galeria/07.jpeg", alt: "Práctica de diseño de modas 7" },
