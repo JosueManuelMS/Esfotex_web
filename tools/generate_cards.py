@@ -2,9 +2,9 @@ from PIL import Image
 import os
 
 PAIRS = [
-    ("img/patronaje-portada.jpg", "img/patronaje-portada-card.jpg"),
-    ("img/diseño-portada.jpg", "img/diseño-portada-card.jpg"),
-    ("img/especializacion-portada.jpg", "img/especializacion-portada-card.jpg"),
+    ("img/patronaje-portada.webp", "img/patronaje-portada-card.webp"),
+    ("img/diseño-portada.webp", "img/diseño-portada-card.webp"),
+    ("img/especializacion-portada.webp", "img/especializacion-portada-card.webp"),
 ]
 
 TARGET_W = 900

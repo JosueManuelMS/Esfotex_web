@@ -6,17 +6,17 @@ const courses = [
 {
 title:"Manejo de Máquina",
 desc:"Aprende el uso profesional de máquinas industriales.",
-img:"img/maquina.jpg"
+img:"img/maquina.webp"
 },
 {
 title:"Patronaje Profesional",
 desc:"Diseña patrones modernos para todo tipo de prendas.",
-img:"img/patronaje.jpg"
+img:"img/patronaje.webp"
 },
 {
 title:"Bordado y Acabados",
 desc:"Técnicas modernas de bordado decorativo.",
-img:"img/bordado.jpg"
+img:"img/bordado.webp"
 }
 ];
 
@@ -117,7 +117,7 @@ if(slides.length && dots.length && document.querySelector(".slides")){
 }
 
 /* HERO BACKGROUND CHANGER */
-const heroImages = ['img/hero.jpeg'];
+const heroImages = ['img/hero.webp'];
 let heroIndex = 0;
 const heroSection = document.querySelector('.hero-large');
 const path = window.location.pathname.toLowerCase();

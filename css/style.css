@@ -104,13 +104,13 @@ color:#000;
 opacity:1;
 }
 
-.menu-toggle{display:none; font-size:24px;cursor:pointer;}
+.menu-toggle{display:none; font-size:24px;cursor:pointer;background:none;border:none;padding:0;color:inherit;font-family:inherit;}
 
 /* HERO LARGE */
 .hero-large{
 height:90vh;
 margin-top:80px;
-background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3)),url("../img/hero.jpeg");
+background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3)),url("../img/hero.webp");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -405,7 +405,7 @@ padding:0;
 .about-hero-full{
 width:100%;
 min-height:90vh;
-background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45)),url("../img/acercade.jpg");
+background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45)),url("../img/acercade.webp");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -1335,7 +1335,7 @@ grid-template-columns:1fr;
 min-height:360px;
 justify-content:center;
 padding:20px;
-background:linear-gradient(180deg, rgba(8,23,63,0.38) 0%, rgba(8,23,63,0.82) 100%),url("../img/acercade.jpg");
+background:linear-gradient(180deg, rgba(8,23,63,0.38) 0%, rgba(8,23,63,0.82) 100%),url("../img/acercade.webp");
 background-size:cover;
 background-position:center;
 }
