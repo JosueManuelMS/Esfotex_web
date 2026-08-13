@@ -546,3 +546,68 @@ if(registroForm && registroWrap){
         }
     });
 }
+
+/* CARRUSEL DE ESPECIALIZACIONES SLIDER */
+const specCarouselTrack = document.getElementById('specCarouselTrack');
+const specPrevBtn = document.getElementById('specPrevBtn');
+const specNextBtn = document.getElementById('specNextBtn');
+
+if (specCarouselTrack && specPrevBtn && specNextBtn) {
+    specPrevBtn.addEventListener('click', () => {
+        const scrollAmount = specCarouselTrack.clientWidth * 0.75;
+        specCarouselTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    specNextBtn.addEventListener('click', () => {
+        const scrollAmount = specCarouselTrack.clientWidth * 0.75;
+        specCarouselTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+}
+
+/* PROMO POPUP MODAL LOGIC */
+const promoModal = document.getElementById('promoModal');
+const promoModalClose = document.getElementById('promoModalClose');
+const promoModalOverlay = document.getElementById('promoModalOverlay');
+
+function openPromoModal() {
+    if (!promoModal) return;
+    promoModal.classList.add('is-active');
+    promoModal.setAttribute('aria-hidden', 'false');
+}
+
+function closePromoModal() {
+    if (!promoModal) return;
+    promoModal.classList.remove('is-active');
+    promoModal.setAttribute('aria-hidden', 'true');
+    try {
+        sessionStorage.setItem('esfotexPromoClosed', 'true');
+    } catch (e) {}
+}
+
+if (promoModal) {
+    try {
+        const isClosedBefore = sessionStorage.getItem('esfotexPromoClosed');
+        if (!isClosedBefore) {
+            setTimeout(() => {
+                openPromoModal();
+            }, 5000);
+        }
+    } catch (e) {
+        setTimeout(() => {
+            openPromoModal();
+        }, 5000);
+    }
+
+    if (promoModalClose) {
+        promoModalClose.addEventListener('click', closePromoModal);
+    }
+    if (promoModalOverlay) {
+        promoModalOverlay.addEventListener('click', closePromoModal);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && promoModal.classList.contains('is-active')) {
+            closePromoModal();
+        }
+    });
+}
+

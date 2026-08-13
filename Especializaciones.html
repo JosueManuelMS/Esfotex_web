@@ -87,6 +87,7 @@
 <section id="hero" class="hero-large hero-course" style="background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3)),url('img/especializacion-portada.webp');background-size:cover;background-position:center;">
 	<div class="hero-course-copy">
 		<h1>Especializaciones</h1>
+		<span class="course-duration" style="font-size:14px;padding:6px 14px;margin-bottom:12px;">⏱️ Duración: 1 mes c/u</span>
 		<p>Perfecciona técnicas avanzadas de confección, acabados y producción para llevar tus prendas a un nivel más competitivo.</p>
 	</div>
 </section>
@@ -131,55 +132,59 @@
 <section class="section specializations-showcase" aria-labelledby="especializaciones-title">
 	<h2 id="especializaciones-title">Nuestras Especializaciones</h2>
 	<p class="section-copy">Elige la línea que más se adapta a tu perfil y perfecciona tu técnica con enfoque práctico.</p>
-	<div class="gallery-grid specializations-grid">
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_lenceria.webp" alt="Especialización en lencería" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Lencería</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_niños.webp" alt="Especialización en ropa de niños" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Ropa de Niños</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_deporte.webp" alt="Especialización en ropa deportiva" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Ropa Deportiva</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_vestido.webp" alt="Especialización en vestidos" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Vestidos</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_uniforme.webp" alt="Especialización en uniformes" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Uniformes</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_sastre.webp" alt="Especialización en sastre" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Sastre</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_blusas.webp" alt="Especialización en blusas" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Blusas</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_perro.webp" alt="Especialización en ropa para mascotas" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Ropa para Mascotas</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_novia.webp" alt="Especialización en vestidos de novia" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Vestidos de Novia</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_hogar.webp" alt="Especialización en lencería del hogar" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Lencería del Hogar</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_bebe.webp" alt="Especialización en ropa de bebés" loading="lazy" decoding="async">
-			<p class="course-title">Especialización en Ropa de Bebés</p>
-		</article>
-		<article class="course-card specialization-card">
-			<img src="img/especializacion_polos.webp" alt="Especialización de polos" loading="lazy" decoding="async">
-			<p class="course-title">Especialización de Polos</p>
-		</article>
+	<div class="spec-carousel-wrapper">
+		<button class="spec-carousel-btn spec-carousel-prev" id="specPrevBtn" type="button" aria-label="Especialización anterior">&#10094;</button>
+		<div class="spec-carousel-track" id="specCarouselTrack">
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_lenceria.webp" alt="Especialización en lencería" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Lencería</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_niños.webp" alt="Especialización en ropa de niños" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Ropa de Niños</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_deporte.webp" alt="Especialización en ropa deportiva" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Ropa Deportiva</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_vestido.webp" alt="Especialización en vestidos" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Vestidos</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_uniforme.webp" alt="Especialización en uniformes" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Uniformes</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_sastre.webp" alt="Especialización en sastre" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Sastre</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_blusas.webp" alt="Especialización en blusas" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Blusas</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_perro.webp" alt="Especialización en ropa para mascotas" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Ropa para Mascotas</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_novia.webp" alt="Especialización en vestidos de novia" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Vestidos de Novia</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_hogar.webp" alt="Especialización en lencería del hogar" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Lencería del Hogar</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_bebe.webp" alt="Especialización en ropa de bebés" loading="lazy" decoding="async">
+				<p class="course-title">Especialización en Ropa de Bebés</p>
+			</article>
+			<article class="course-card specialization-card">
+				<img src="img/especializacion_polos.webp" alt="Especialización de polos" loading="lazy" decoding="async">
+				<p class="course-title">Especialización de Polos</p>
+			</article>
+		</div>
+		<button class="spec-carousel-btn spec-carousel-next" id="specNextBtn" type="button" aria-label="Especialización siguiente">&#10095;</button>
 	</div>
 </section>
 

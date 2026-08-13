@@ -178,24 +178,28 @@
         <a class="course-card" href="ManejoDeMaquina.html">
             <img src="img/maquina-portada-card.webp" alt="Manejo de maquina" loading="lazy" decoding="async" width="900" height="540">
             <p class="course-title">Manejo de maquina</p>
+            <span class="course-duration">⏱️ Duración: 2 meses</span><br>
             <h6>Conoce más</h6>
         </a>
 
         <a class="course-card" href="Patronaje.html">
             <img src="img/patronaje-portada-card.webp" alt="Patronaje de prendas" loading="lazy" decoding="async" width="900" height="540">
             <p class="course-title">Patronaje de prendas</p>
+            <span class="course-duration">⏱️ Duración: 2 meses</span><br>
             <h6>Conoce más</h6>
         </a>
 
         <a class="course-card" href="Especializaciones.html">
             <img src="img/especializacion-portada-card.webp" alt="Especializaciones" loading="lazy" decoding="async" width="900" height="540">
             <p class="course-title">Especializaciones</p>
+            <span class="course-duration">⏱️ Duración: 1 mes c/u</span><br>
             <h6>Conoce más</h6>  
         </a>
 
         <a class="course-card" href="DiseñoDeModas.html">
             <img src="img/diseño-portada-card.webp" alt="Diseño de modas" loading="lazy" decoding="async" width="900" height="540">
             <p class="course-title">Diseño de modas</p>
+            <span class="course-duration">⏱️ Duración: 4 meses</span><br>
             <h6>Conoce más</h6>
         </a>
     </div>
@@ -466,9 +470,21 @@
 
 <a href="https://wa.me/51939122803?text=Hola%20ESFOTEX%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20cursos.%20%C2%BFMe%20pueden%20ayudar%3F" class="whatsapp"><img src="img/WhatsApp_icon.webp" alt="WhatsApp"></a>
 
-<div class="lightbox" id="certificadoLightbox" aria-hidden="true">
-    <button type="button" class="lightbox-close" aria-label="Cerrar vista ampliada">×</button>
-    <img src="img/Certificado.webp" alt="Certificado ESFOTEX ampliado" class="lightbox-img" loading="lazy" decoding="async">
+<!-- POPUP PROMOCIONAL -->
+<div class="promo-modal" id="promoModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="promo-modal-overlay" id="promoModalOverlay"></div>
+    <div class="promo-modal-content">
+        <button type="button" class="promo-modal-close" id="promoModalClose" aria-label="Cerrar ventana promocional">×</button>
+        <div class="promo-modal-header">
+            <span class="promo-modal-badge">🔥 PROMOCIÓN ESPECIAL</span>
+            <img src="img/popup-promo.webp" alt="Promoción ESFOTEX" class="promo-modal-img" onerror="this.style.display='none';">
+        </div>
+        <div class="promo-modal-body">
+            <h3>¡Inicia tu Carrera en Confección!</h3>
+            <p>Aprovecha vacantes limitadas y solicita información exclusiva sobre nuestros cursos y promociones vigentes.</p>
+            <a href="https://wa.me/51939122803?text=Hola%20ESFOTEX%2C%20vi%20la%20promoci%C3%B3n%20en%20la%20web%20y%20quisiera%20mas%20informaci%C3%B3n%20para%20inscribirme." class="btn-primary promo-modal-cta" target="_blank" rel="noopener">¡Reclamar Promoción por WhatsApp!</a>
+        </div>
+    </div>
 </div>
 
 <script src="js/script.js"></script>
