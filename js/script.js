@@ -611,3 +611,84 @@ if (promoModal) {
     });
 }
 
+/* RECLAMACION FORM SUBMIT */
+const reclamacionForm = document.getElementById('reclamacionForm');
+const reclamacionStatus = document.getElementById('reclamacionStatus');
+const reclamacionesWrap = document.querySelector('.reclamaciones-container');
+
+function setReclamacionStatus(message, state) {
+    if (!reclamacionStatus) return;
+    reclamacionStatus.textContent = message;
+    if (!state) {
+        reclamacionStatus.removeAttribute('data-state');
+        return;
+    }
+    reclamacionStatus.setAttribute('data-state', state);
+}
+
+if (reclamacionForm && reclamacionesWrap) {
+    reclamacionForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const endpoint = (reclamacionesWrap.dataset.sheetEndpoint || '').trim();
+        const submitButton = reclamacionForm.querySelector('button[type="submit"]');
+
+        if (!endpoint) {
+            setReclamacionStatus('Configura primero la URL de Google Apps Script en data-sheet-endpoint para activar el guardado.', 'error');
+            return;
+        }
+
+        const formData = new FormData(reclamacionForm);
+        if (formData.get('empresa')) {
+            setReclamacionStatus('Solicitud no válida.', 'error');
+            return;
+        }
+
+        if (!reclamacionForm.checkValidity()) {
+            reclamacionForm.reportValidity();
+            setReclamacionStatus('Completa los campos obligatorios antes de enviar.', 'error');
+            return;
+        }
+
+        const payload = {
+            tipoFormulario: 'reclamacion',
+            nombre: String(formData.get('nombre') || '').trim(),
+            tipoDoc: String(formData.get('tipoDoc') || '').trim(),
+            numDoc: String(formData.get('numDoc') || '').trim(),
+            telefono: String(formData.get('telefono') || '').trim(),
+            correo: String(formData.get('correo') || '').trim(),
+            direccion: String(formData.get('direccion') || '').trim(),
+            apoderado: String(formData.get('apoderado') || '').trim(),
+            tipoBien: String(formData.get('tipoBien') || 'Servicio').trim(),
+            servicio: String(formData.get('servicio') || '').trim(),
+            monto: String(formData.get('monto') || '0.00').trim(),
+            tipoAtencion: String(formData.get('tipoAtencion') || 'Reclamo').trim(),
+            detalle: String(formData.get('detalle') || '').trim(),
+            pedido: String(formData.get('pedido') || '').trim(),
+            pagina: window.location.href,
+            creadoEn: new Date().toISOString()
+        };
+
+        try {
+            if (submitButton) submitButton.disabled = true;
+            setReclamacionStatus('Enviando hoja de reclamación...', '');
+
+            await fetch(endpoint, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            reclamacionForm.reset();
+            setReclamacionStatus('Su Hoja de Reclamación ha sido registrada correctamente. Recibirá una respuesta en un plazo no mayor a 15 días hábiles.', 'ok');
+        } catch (error) {
+            setReclamacionStatus('No se pudo enviar la reclamación. Intente nuevamente o contáctenos por WhatsApp.', 'error');
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
+    });
+}
+
