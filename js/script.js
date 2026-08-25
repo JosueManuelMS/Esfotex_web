@@ -547,6 +547,91 @@ if(registroForm && registroWrap){
     });
 }
 
+/* CARRUSEL DE CURSOS DISPONIBLES (DRAG, SNAP & INFINITE LOOP) */
+const coursesTrack = document.getElementById('coursesCarouselTrack');
+const coursesPrevBtn = document.getElementById('coursesPrevBtn');
+const coursesNextBtn = document.getElementById('coursesNextBtn');
+
+if (coursesTrack) {
+    const originalItems = Array.from(coursesTrack.children);
+    if (originalItems.length > 0) {
+        originalItems.forEach(item => {
+            const cloneAfter = item.cloneNode(true);
+            coursesTrack.appendChild(cloneAfter);
+        });
+        originalItems.forEach(item => {
+            const cloneBefore = item.cloneNode(true);
+            coursesTrack.insertBefore(cloneBefore, coursesTrack.firstChild);
+        });
+
+        const getItemWidth = () => {
+            const firstItem = coursesTrack.firstElementChild;
+            const style = window.getComputedStyle(coursesTrack);
+            const gap = parseFloat(style.gap) || 24;
+            return (firstItem ? firstItem.offsetWidth : 300) + gap;
+        };
+
+        const getSingleSetWidth = () => originalItems.length * getItemWidth();
+
+        setTimeout(() => {
+            coursesTrack.scrollLeft = getSingleSetWidth();
+        }, 100);
+
+        const checkLoop = () => {
+            const setWidth = getSingleSetWidth();
+            if (coursesTrack.scrollLeft <= 10) {
+                coursesTrack.scrollLeft += setWidth;
+            } else if (coursesTrack.scrollLeft >= setWidth * 2 - 10) {
+                coursesTrack.scrollLeft -= setWidth;
+            }
+        };
+
+        coursesTrack.addEventListener('scroll', checkLoop);
+
+        if (coursesNextBtn) {
+            coursesNextBtn.addEventListener('click', () => {
+                const step = getItemWidth();
+                coursesTrack.scrollBy({ left: step, behavior: 'smooth' });
+            });
+        }
+        if (coursesPrevBtn) {
+            coursesPrevBtn.addEventListener('click', () => {
+                const step = getItemWidth();
+                coursesTrack.scrollBy({ left: -step, behavior: 'smooth' });
+            });
+        }
+
+        let isMouseDown = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        coursesTrack.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            coursesTrack.classList.add('is-dragging');
+            startX = e.pageX - coursesTrack.offsetLeft;
+            startScrollLeft = coursesTrack.scrollLeft;
+        });
+
+        coursesTrack.addEventListener('mouseleave', () => {
+            isMouseDown = false;
+            coursesTrack.classList.remove('is-dragging');
+        });
+
+        coursesTrack.addEventListener('mouseup', () => {
+            isMouseDown = false;
+            coursesTrack.classList.remove('is-dragging');
+        });
+
+        coursesTrack.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            e.preventDefault();
+            const x = e.pageX - coursesTrack.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            coursesTrack.scrollLeft = startScrollLeft - walk;
+        });
+    }
+}
+
 /* CARRUSEL DE ESPECIALIZACIONES SLIDER */
 const specCarouselTrack = document.getElementById('specCarouselTrack');
 const specPrevBtn = document.getElementById('specPrevBtn');

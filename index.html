@@ -171,38 +171,50 @@
 
 
 <!-- Cursos -->
-<section id="cursos" class="section">
+<section id="cursos" class="section courses-section">
     <h2>Cursos Disponibles</h2>
     <p class="section-copy">Elige el curso que mejor se adapte a tu objetivo: aprender desde cero, perfeccionar técnica o impulsar tu emprendimiento en confección.</p>
-    <div class="gallery-grid">
-        <a class="course-card" href="ManejoDeMaquina.html">
-            <img src="img/maquina-portada-card.webp" alt="Manejo de maquina" loading="lazy" decoding="async" width="900" height="540">
-            <p class="course-title">Manejo de maquina</p>
-            <span class="course-duration">⏱️ Duración: 2 meses</span><br>
-            <h6>Conoce más</h6>
-        </a>
+    
+    <div class="courses-carousel-wrapper">
+        <button type="button" class="courses-carousel-btn courses-carousel-prev" id="coursesPrevBtn" aria-label="Curso anterior">‹</button>
+        
+        <div class="courses-carousel-track" id="coursesCarouselTrack">
+            <a class="course-slider-item" href="ManejoDeMaquina.html">
+                <div class="course-slider-img-wrap">
+                    <img src="img/maquina-portada-card.webp" alt="Manejo de máquina" loading="lazy" decoding="async" width="900" height="540">
+                </div>
+                <h3 class="course-slider-title">Manejo de máquina</h3>
+                <span class="course-duration">⏱️ Duración: 2 meses</span>
+            </a>
 
-        <a class="course-card" href="Patronaje.html">
-            <img src="img/patronaje-portada-card.webp" alt="Patronaje de prendas" loading="lazy" decoding="async" width="900" height="540">
-            <p class="course-title">Patronaje de prendas</p>
-            <span class="course-duration">⏱️ Duración: 2 meses</span><br>
-            <h6>Conoce más</h6>
-        </a>
+            <a class="course-slider-item" href="Patronaje.html">
+                <div class="course-slider-img-wrap">
+                    <img src="img/patronaje-portada-card.webp" alt="Patronaje de prendas" loading="lazy" decoding="async" width="900" height="540">
+                </div>
+                <h3 class="course-slider-title">Patronaje de prendas</h3>
+                <span class="course-duration">⏱️ Duración: 2 meses</span>
+            </a>
 
-        <a class="course-card" href="Especializaciones.html">
-            <img src="img/especializacion-portada-card.webp" alt="Especializaciones" loading="lazy" decoding="async" width="900" height="540">
-            <p class="course-title">Especializaciones</p>
-            <span class="course-duration">⏱️ Duración: 1 mes c/u</span><br>
-            <h6>Conoce más</h6>  
-        </a>
+            <a class="course-slider-item" href="Especializaciones.html">
+                <div class="course-slider-img-wrap">
+                    <img src="img/especializacion-portada-card.webp" alt="Especializaciones" loading="lazy" decoding="async" width="900" height="540">
+                </div>
+                <h3 class="course-slider-title">Especializaciones</h3>
+                <span class="course-duration">⏱️ Duración: 1 mes c/u</span>
+            </a>
 
-        <a class="course-card" href="DiseñoDeModas.html">
-            <img src="img/diseño-portada-card.webp" alt="Diseño de modas" loading="lazy" decoding="async" width="900" height="540">
-            <p class="course-title">Diseño de modas</p>
-            <span class="course-duration">⏱️ Duración: 4 meses</span><br>
-            <h6>Conoce más</h6>
-        </a>
+            <a class="course-slider-item" href="DiseñoDeModas.html">
+                <div class="course-slider-img-wrap">
+                    <img src="img/diseño-portada-card.webp" alt="Diseño de modas" loading="lazy" decoding="async" width="900" height="540">
+                </div>
+                <h3 class="course-slider-title">Diseño de modas</h3>
+                <span class="course-duration">⏱️ Duración: 4 meses</span>
+            </a>
+        </div>
+
+        <button type="button" class="courses-carousel-btn courses-carousel-next" id="coursesNextBtn" aria-label="Siguiente curso">›</button>
     </div>
+
     <a href="https://wa.me/51939122803?text=Hola%20ESFOTEX%2C%20quisiera%20que%20me%20ayuden%20a%20elegir%20el%20curso%20ideal%20para%20m%C3%AD." class="btn-primary section-cta">Ayúdame a elegir mi curso</a>
 </section>
 
