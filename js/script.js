@@ -553,6 +553,8 @@ const coursesPrevBtn = document.getElementById('coursesPrevBtn');
 const coursesNextBtn = document.getElementById('coursesNextBtn');
 
 if (coursesTrack) {
+    coursesTrack.addEventListener('dragstart', (e) => e.preventDefault());
+
     const originalItems = Array.from(coursesTrack.children);
     if (originalItems.length > 0) {
         originalItems.forEach(item => {
@@ -564,38 +566,70 @@ if (coursesTrack) {
             coursesTrack.insertBefore(cloneBefore, coursesTrack.firstChild);
         });
 
+        coursesTrack.querySelectorAll('img, a').forEach(el => {
+            el.setAttribute('draggable', 'false');
+        });
+
         const getItemWidth = () => {
             const firstItem = coursesTrack.firstElementChild;
             const style = window.getComputedStyle(coursesTrack);
             const gap = parseFloat(style.gap) || 24;
-            return (firstItem ? firstItem.offsetWidth : 300) + gap;
+            return (firstItem ? firstItem.offsetWidth : 350) + gap;
         };
 
         const getSingleSetWidth = () => originalItems.length * getItemWidth();
 
-        setTimeout(() => {
+        const setInitialPosition = () => {
+            coursesTrack.style.scrollBehavior = 'auto';
             coursesTrack.scrollLeft = getSingleSetWidth();
-        }, 100);
+            coursesTrack.style.scrollBehavior = 'smooth';
+        };
 
+        requestAnimationFrame(() => {
+            setInitialPosition();
+        });
+
+        let isAdjusting = false;
         const checkLoop = () => {
-            const setWidth = getSingleSetWidth();
-            if (coursesTrack.scrollLeft <= 10) {
-                coursesTrack.scrollLeft += setWidth;
-            } else if (coursesTrack.scrollLeft >= setWidth * 2 - 10) {
-                coursesTrack.scrollLeft -= setWidth;
+            if (isAdjusting) return;
+            const singleWidth = getSingleSetWidth();
+            const currentScroll = coursesTrack.scrollLeft;
+
+            if (currentScroll <= 15) {
+                isAdjusting = true;
+                coursesTrack.style.scrollBehavior = 'auto';
+                coursesTrack.scrollLeft = currentScroll + singleWidth;
+                setTimeout(() => {
+                    coursesTrack.style.scrollBehavior = 'smooth';
+                    isAdjusting = false;
+                }, 40);
+            } else if (currentScroll >= singleWidth * 2 - 15) {
+                isAdjusting = true;
+                coursesTrack.style.scrollBehavior = 'auto';
+                coursesTrack.scrollLeft = currentScroll - singleWidth;
+                setTimeout(() => {
+                    coursesTrack.style.scrollBehavior = 'smooth';
+                    isAdjusting = false;
+                }, 40);
             }
         };
 
-        coursesTrack.addEventListener('scroll', checkLoop);
+        let scrollTimeout;
+        coursesTrack.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(checkLoop, 60);
+        }, { passive: true });
 
         if (coursesNextBtn) {
             coursesNextBtn.addEventListener('click', () => {
+                coursesTrack.style.scrollBehavior = 'smooth';
                 const step = getItemWidth();
                 coursesTrack.scrollBy({ left: step, behavior: 'smooth' });
             });
         }
         if (coursesPrevBtn) {
             coursesPrevBtn.addEventListener('click', () => {
+                coursesTrack.style.scrollBehavior = 'smooth';
                 const step = getItemWidth();
                 coursesTrack.scrollBy({ left: -step, behavior: 'smooth' });
             });
@@ -604,31 +638,42 @@ if (coursesTrack) {
         let isMouseDown = false;
         let startX = 0;
         let startScrollLeft = 0;
+        let hasDragged = false;
 
         coursesTrack.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return;
             isMouseDown = true;
+            hasDragged = false;
             coursesTrack.classList.add('is-dragging');
+            coursesTrack.style.scrollBehavior = 'auto';
             startX = e.pageX - coursesTrack.offsetLeft;
             startScrollLeft = coursesTrack.scrollLeft;
         });
 
-        coursesTrack.addEventListener('mouseleave', () => {
-            isMouseDown = false;
-            coursesTrack.classList.remove('is-dragging');
-        });
-
-        coursesTrack.addEventListener('mouseup', () => {
-            isMouseDown = false;
-            coursesTrack.classList.remove('is-dragging');
-        });
-
-        coursesTrack.addEventListener('mousemove', (e) => {
+        window.addEventListener('mousemove', (e) => {
             if (!isMouseDown) return;
-            e.preventDefault();
             const x = e.pageX - coursesTrack.offsetLeft;
-            const walk = (x - startX) * 1.5;
+            const walk = (x - startX) * 1.4;
+            if (Math.abs(walk) > 5) {
+                hasDragged = true;
+            }
             coursesTrack.scrollLeft = startScrollLeft - walk;
         });
+
+        window.addEventListener('mouseup', () => {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+            coursesTrack.classList.remove('is-dragging');
+            coursesTrack.style.scrollBehavior = 'smooth';
+        });
+
+        coursesTrack.addEventListener('click', (e) => {
+            if (hasDragged) {
+                e.preventDefault();
+                e.stopPropagation();
+                hasDragged = false;
+            }
+        }, true);
     }
 }
 
