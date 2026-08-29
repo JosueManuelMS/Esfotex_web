@@ -125,51 +125,6 @@
 </section>
 
 
-<!-- REGISTRO -->
-<section id="registro" class="section registro-section">
-    <div class="registro-wrap" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbw03AzRKAdA9UodtEct8heG7yXnhF6uUOAJmf4nPDxc4naoZzG2vmYP3zc6WXpOnMXQ/exec">
-        <div class="registro-copy">
-            <p class="registro-kicker">INSCRIPCIONES ABIERTAS</p>
-            <h2>Registra tu curso de interés y te contactamos</h2>
-            <p>Déjanos tus datos y te ayudamos a elegir el curso ideal según tu nivel, horarios y objetivo profesional.</p>
-        </div>
-
-        <form id="registroForm" class="registro-form" novalidate>
-            <label for="registroNombre">Nombre completo</label>
-            <input id="registroNombre" name="nombre" type="text" autocomplete="name" required>
-
-            <label for="registroTelefono">WhatsApp</label>
-            <input id="registroTelefono" name="telefono" type="tel" autocomplete="tel" required pattern="[0-9+\s()-]{7,20}">
-
-            <label for="registroCorreo">Correo electrónico</label>
-            <input id="registroCorreo" name="correo" type="email" autocomplete="email" required>
-
-            <label for="registroCurso">Curso de interés</label>
-            <select id="registroCurso" name="curso" required>
-                <option value="" selected disabled>Selecciona un curso</option>
-                <option value="Manejo de Máquina">Manejo de Máquina</option>
-                <option value="Patronaje de Prendas">Patronaje de Prendas</option>
-                <option value="Especializaciones">Especializaciones</option>
-                <option value="Diseño de Modas">Diseño de Modas</option>
-            </select>
-
-            <label for="registroMensaje">Mensaje (opcional)</label>
-            <textarea id="registroMensaje" name="mensaje" rows="3" placeholder="Cuéntanos qué deseas aprender"></textarea>
-
-            <input type="text" name="empresa" class="registro-bot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-            <label class="registro-check" for="registroTerminos">
-                <input id="registroTerminos" name="terminos" type="checkbox" required>
-                <span>Acepto que ESFOTEX me contacte por WhatsApp o correo.</span>
-            </label>
-
-            <button type="submit" class="btn-primary registro-submit">Reservar mi vacante</button>
-            <p id="registroStatus" class="registro-status" aria-live="polite"></p>
-        </form>
-    </div>
-</section>
-
-
 <!-- Cursos -->
 <section id="cursos" class="section courses-section">
     <h2>Cursos Disponibles</h2>
@@ -216,6 +171,51 @@
     </div>
 
     <a href="https://wa.me/51939122803?text=Hola%20ESFOTEX%2C%20quisiera%20que%20me%20ayuden%20a%20elegir%20el%20curso%20ideal%20para%20m%C3%AD." class="btn-primary section-cta">Ayúdame a elegir mi curso</a>
+</section>
+
+
+<!-- REGISTRO -->
+<section id="registro" class="section registro-section">
+    <div class="registro-wrap" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbw03AzRKAdA9UodtEct8heG7yXnhF6uUOAJmf4nPDxc4naoZzG2vmYP3zc6WXpOnMXQ/exec">
+        <div class="registro-copy">
+            <p class="registro-kicker">INSCRIPCIONES ABIERTAS</p>
+            <h2>Registra tu curso de interés y te contactamos</h2>
+            <p>Déjanos tus datos y te ayudamos a elegir el curso ideal según tu nivel, horarios y objetivo profesional.</p>
+        </div>
+
+        <form id="registroForm" class="registro-form" novalidate>
+            <label for="registroNombre">Nombre completo</label>
+            <input id="registroNombre" name="nombre" type="text" autocomplete="name" required>
+
+            <label for="registroTelefono">WhatsApp</label>
+            <input id="registroTelefono" name="telefono" type="tel" autocomplete="tel" required pattern="[0-9+\s()-]{7,20}">
+
+            <label for="registroCorreo">Correo electrónico</label>
+            <input id="registroCorreo" name="correo" type="email" autocomplete="email" required>
+
+            <label for="registroCurso">Curso de interés</label>
+            <select id="registroCurso" name="curso" required>
+                <option value="" selected disabled>Selecciona un curso</option>
+                <option value="Manejo de Máquina">Manejo de Máquina</option>
+                <option value="Patronaje de Prendas">Patronaje de Prendas</option>
+                <option value="Especializaciones">Especializaciones</option>
+                <option value="Diseño de Modas">Diseño de Modas</option>
+            </select>
+
+            <label for="registroMensaje">Mensaje (opcional)</label>
+            <textarea id="registroMensaje" name="mensaje" rows="3" placeholder="Cuéntanos qué deseas aprender"></textarea>
+
+            <input type="text" name="empresa" class="registro-bot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <label class="registro-check" for="registroTerminos">
+                <input id="registroTerminos" name="terminos" type="checkbox" required>
+                <span>Acepto que ESFOTEX me contacte por WhatsApp o correo.</span>
+            </label>
+
+            <button type="submit" class="btn-primary registro-submit">Reservar mi vacante</button>
+            <p id="registroStatus" class="registro-status" aria-live="polite"></p>
+        </form>
+    </div>
 </section>
 
 
